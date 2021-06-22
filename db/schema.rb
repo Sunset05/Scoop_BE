@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_172154) do
+ActiveRecord::Schema.define(version: 2021_06_22_043614) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
+    t.string "department"
   end
 
-  create_table "meals", force: :cascade do |t|
-    t.string "name"
+  create_table "recipe_ingredients", force: :cascade do |t|
     t.integer "ingredient_id"
     t.integer "recipe_id"
-    t.index ["ingredient_id"], name: "index_meals_on_ingredient_id"
-    t.index ["recipe_id"], name: "index_meals_on_recipe_id"
+    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
+    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string "name"
+    t.string "meal"
     t.string "image_url"
   end
 
