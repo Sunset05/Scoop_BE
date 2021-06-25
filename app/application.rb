@@ -18,5 +18,10 @@ class Application
     end
     resp.finish
   end
-
+    # case req.path_info
+    # when /recipes/
+    #   [200,{ 'Content-type' => 'application/json' },[{:recipes => Recipe.all}.to_json(:include => :ingredients)]]
+    # else
+    #   [404, {"Content-Type" => "text/html"}, ["I'm Lost!"]]
+    # end
 end
