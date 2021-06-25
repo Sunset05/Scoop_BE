@@ -11,7 +11,7 @@ class Application
       return [ 
         200, 
         { 'Content-type' => 'application/json' },
-        [{:recipes => Recipe.all}.to_json(:include => :ingredients)]
+        [{recipes: Recipe.all}.to_json(include: :ingredients)]
       ]
       else
       resp.write "Path not Found"
